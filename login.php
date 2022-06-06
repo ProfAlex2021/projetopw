@@ -30,8 +30,20 @@
   </nav>
     <div class="row">
         <div class="col">
-            <h1>Página inicial</h1>
-            <p>Seja bem vindo ao site!</p>
+            <h1>Login</h1>
+            <form action="validar.php">
+              <div>
+                <label for="txtNome" class="form-label">Nome:</label>
+                <input type="text" name="txtNome" id="txtNome" placeholder="Nome" class="form-control" />
+              </div>
+              <div>
+                <label for="txtSenha" class="form-label">Senha:</label>
+                <input type="password" name="txtSenha" id="txtSenha" placeholder="Senha" class="form-control" />
+              </div>
+              <div>
+                <input type="submit" value="Login" class="btn btn-primary" />
+              </div>
+            </form>
         </div>
     </div>
 </div>
