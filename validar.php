@@ -11,5 +11,5 @@
 
     if($_REQUEST['txtNome'] == "admin" && $_REQUEST['txtSenha'] == "nimda"){
         $_SESSION['usuario'] = "Adminstrador";
-        header("Location: indexp.php");
+        header("Location: index.php");
     }

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,15 +23,25 @@
           <a class="nav-link" href="lista.php">Lista</a>
         </li>
         <li class="nav-item">
+  <?php if(isset($_SESSION['usuario'])){?>
+          <a class="nav-link" href="cadastro.php">Cadastro</a>
+  <?php } else { ?>
           <a class="nav-link disabled" href="cadastro.php">Cadastro</a>
+  <?php } ?>
         </li>
       </ul>
-      <form action="login.php" class="d-flex">
-        <input type="submit" value="Login" class="btn btn-outline-info" />
+  <?php if(isset($_SESSION['usuario'])){?>
+      <form action="logout.php" class="d-flex">
+        <input type="submit" value="Sair" class="btn btn-outline-info" />
       </form>
+  <?php } else { ?>
+      <form action="login.php" class="d-flex">
+        <input type="submit" value="Entrar" class="btn btn-outline-info" />
+      </form>
+  <?php } ?>
     </div>
   </nav>
-    <div class="row">
+    <div class="row">.
         <div class="col">
             <h1>Página inicial</h1>
             <p>Seja bem vindo ao site!</p>
