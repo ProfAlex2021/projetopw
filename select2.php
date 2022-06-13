@@ -16,6 +16,12 @@
         <tr>
             <td><?php echo $linha['nome_us']?></td>
             <td><?php echo $linha['email_us']?></td>
+            <td>
+              <form action="excluir.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $linha['id_us']?>" />
+                <input type="submit" value="Excluir" class="btn btn-danger" />
+              </form>
+            </td>
         </tr>
 <?php }?>
     </tbody>

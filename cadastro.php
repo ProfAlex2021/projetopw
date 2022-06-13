@@ -1,5 +1,5 @@
 <?php
-  session_start();
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -12,18 +12,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+  <div class="container min-vh-100" style="background-color: #f00">
+  <nav class="navbar navbar-expand-sm bg-success navbar-dark">
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.php">Página inicial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="lista.php">Lista</a>
+          <a class="nav-link" href="lista.php">Lista</a>
         </li>
         <li class="nav-item">
   <?php if(isset($_SESSION['usuario'])){?>
-          <a class="nav-link" href="cadastro.php">Cadastro</a>
+          <a class="nav-link active" href="cadastro.php">Cadastro</a>
   <?php } else { ?>
           <a class="nav-link disabled" href="cadastro.php">Cadastro</a>
   <?php } ?>
@@ -40,11 +41,22 @@
   <?php } ?>
     </div>
   </nav>
-<div class="container">
-    <div class="row">
+    <div class="row">.
         <div class="col">
-            <h1>Lista de usuários</h1>
-            <?php require("select2.php") ?>
+            <h1>Cadastro</h1>
+            <form action="salvar.php" method="POST">
+              <div>
+                <label for="txtNome" class="form-label">Nome:</label>
+                <input type="text" name="txtNome" id="txtNome" placeholder="Nome" class="form-control" required />
+              </div>
+              <div>
+                <label for="txtEmail" class="form-label">Email:</label>
+                <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" class="form-control" required />
+              </div>
+              <div>
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+              </div>
+            </form>
         </div>
     </div>
 </div>
